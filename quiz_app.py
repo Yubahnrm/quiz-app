@@ -1,6 +1,8 @@
 import streamlit as st
 from groq import Groq
 import re
+import warnings
+warnings.filterwarnings('ignore')
 import time
 import os
 from dotenv import load_dotenv
