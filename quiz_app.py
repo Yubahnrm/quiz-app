@@ -87,7 +87,10 @@ Q2: [question]
 
 # ── Parse Questions ──
 def parse_questions(quiz_text):
-    questions = re.split(r'Q[0-9]+:', quiz_text)
+    try:
+        questions = re.split(r'Q[0-9]+:', quiz_text)
+    except Exception:
+        questions = quiz_text.split('\n\n')
     questions = [q.strip() for q in questions if q.strip()]
     parsed = []
     for q in questions:
